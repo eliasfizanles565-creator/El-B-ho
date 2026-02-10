@@ -533,3 +533,40 @@ body { background: var(--dark); color: white; font-family: 'Poppins', sans-serif
         max-width: 350px !important; /* Mantiene un tamaño fijo y legible */
     }
 }
+
+
+/* --- ⛔ PROHIBIDO ACHICAR (BLOQUEO TOTAL) --- */
+@media screen and (max-width: 768px) {
+
+    /* 1. Forzamos que el contenedor no comprima a sus hijos */
+    .grid-9, 
+    .contenedor-horizontal-grande {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important; /* Evita que intenten reacomodarse raro */
+    }
+
+    /* 2. Bloqueo de las tarjetas del Catálogo */
+    .epic-card {
+        width: 350px !important;    /* TAMAÑO FIJO */
+        min-width: 350px !important; /* PROHIBIDO ACHICAR */
+        flex-shrink: 0 !important;   /* ORDEN DIRECTA AL NAVEGADOR DE NO COMPRIMIR */
+        margin-bottom: 30px !important;
+    }
+
+    /* 3. Bloqueo de las tarjetas del Oráculo */
+    .card-oraculo-pro, .card-oraculo-xl {
+        width: 400px !important;    /* TU TAMAÑO ORIGINAL FIJO */
+        min-width: 400px !important; /* PROHIBIDO ACHICAR */
+        flex-shrink: 0 !important;   /* NO SE ENCOGE */
+        height: auto !important;
+        border: none !important;     /* SIN BORDES */
+        margin-bottom: 40px !important;
+    }
+
+    /* 4. Evita que el fondo o el cuerpo obliguen a achicar */
+    body, html {
+        overflow-x: auto !important; /* Si la tarjeta es más grande que el cel, que salga barra de scroll lateral en vez de achicarse */
+    }
+}
