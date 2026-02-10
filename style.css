@@ -396,3 +396,56 @@ body { background: var(--dark); color: white; font-family: 'Poppins', sans-serif
         width: 100%;
     }
 }
+
+/* --- 📱 SOLUCIÓN PARA MÓVILES Y PANTALLAS PEQUEÑAS --- */
+
+/* Cuando la pantalla mida menos de 1024px (Tablets y Laptops pequeñas) */
+@media (max-width: 1024px) {
+    .grid-9, 
+    .grid-oraculo-horizontal, 
+    .contenedor-horizontal-grande {
+        grid-template-columns: repeat(2, 1fr) !important; /* Pasa de 3 a 2 columnas */
+        gap: 20px;
+    }
+}
+
+/* Cuando la pantalla mida menos de 768px (Celulares) */
+@media (max-width: 768px) {
+    /* 1. Forzamos que los contenedores usen una sola columna para que nada se reduzca de tamaño */
+    .grid-9, 
+    .grid-oraculo-horizontal, 
+    .contenedor-horizontal-grande,
+    .contenedor-oraculo-horizontal {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 10px;
+    }
+
+    /* 2. Ajustamos las tarjetas para que ocupen el ancho de la pantalla sin comprimirse */
+    .epic-card, 
+    .editorial-card-wide, 
+    .card-oraculo-xl {
+        width: 100% !important;
+        max-width: 380px; /* Tamaño cómodo para leer en celular */
+        height: auto !important; /* Deja que crezcan según el contenido */
+        flex-direction: column !important; /* Imagen arriba, texto abajo */
+        margin-bottom: 20px;
+    }
+
+    /* 3. Corregimos las secciones para que no tengan márgenes laterales gigantes */
+    .seccion-maestra, 
+    .seccion-oraculo-limpia {
+        padding: 60px 5% !important;
+    }
+
+    /* 4. Ajustamos el slider de inicio para que no rompa el ancho */
+    .slide-card {
+        width: 280px;
+    }
+
+    /* 5. Centramos los títulos */
+    .editorial-header .main-title {
+        font-size: 2rem !important;
+    }
+}
