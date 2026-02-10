@@ -341,3 +341,58 @@ body { background: var(--dark); color: white; font-family: 'Poppins', sans-serif
     background: var(--gold);
     margin: 20px auto; /* El 'auto' en los lados la centra horizontalmente */
 }
+
+/* --- 📱 AJUSTES PARA CELULAR --- */
+@media (max-width: 768px) {
+    /* 1. Centrar los títulos en móvil */
+    .editorial-header {
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .main-title {
+        font-size: 1.8rem; /* Un poco más pequeño para que no se corte */
+    }
+
+    /* 2. Convertir la fila horizontal en vertical solo en móviles */
+    .grid-oraculo-horizontal, 
+    .contenedor-horizontal-grande,
+    .oraculo-wrapper-horizontal {
+        display: flex !important;
+        flex-direction: column !important; /* Uno debajo de otro */
+        align-items: center !important;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    /* 3. Ajustar el tamaño de las tarjetas para que quepan en la pantalla */
+    .editorial-card-wide,
+    .tarjeta-oraculo-horizontal,
+    .oraculo-card-premium,
+    .card-oraculo-pro {
+        flex-direction: column !important; /* Imagen arriba, texto abajo en el cel */
+        width: 100% !important; /* Ocupa todo el ancho disponible */
+        max-width: 350px; /* Pero que no sea gigante */
+        height: auto !important; /* Que crezca según el texto */
+        min-height: auto;
+    }
+
+    /* 4. Ajustar la parte de la imagen en el móvil */
+    .card-visual-left, 
+    .oraculo-img-lado, 
+    .capa-visual {
+        flex: 0 0 200px !important; /* Altura fija para la imagen */
+        width: 100%;
+    }
+
+    /* 5. Ajustar el catálogo para que salgan de 1 en 1 o de 2 en 2 */
+    .grid-9 {
+        grid-template-columns: 1fr !important; /* Una sola columna en el cel */
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .epic-card {
+        width: 100%;
+    }
+}
