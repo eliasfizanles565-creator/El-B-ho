@@ -490,3 +490,46 @@ body { background: var(--dark); color: white; font-family: 'Poppins', sans-serif
         font-size: 1.8rem !important;
     }
 }
+
+
+
+/* --- 🛠️ REPARACIÓN DEFINITIVA PARA MÓVIL --- */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Forzamos que la línea dorada se encoja para que no estire la pantalla */
+    .line-divider {
+        width: 90% !important;
+        max-width: 90vw !important;
+        margin: 20px auto !important;
+    }
+
+    /* 2. El Oráculo: Forzamos que ignoren el ancho horizontal y se pongan en columna */
+    .contenedor-horizontal-grande {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 10px !important;
+    }
+
+    /* 3. TAMAÑO FIJO: Aquí obligamos a las tarjetas a medir lo mismo que en tu PC pero adaptado */
+    .card-oraculo-pro {
+        width: 90vw !important;      /* Usa casi todo el ancho de la pantalla del cel */
+        min-width: 320px !important;  /* NUNCA se achicará menos de esto */
+        max-width: 420px !important;  /* NUNCA será más grande que tu original */
+        height: auto !important;      /* Deja que crezca hacia abajo si hay mucho texto */
+        margin-bottom: 30px !important;
+        border: none !important;      /* Quitamos bordes */
+    }
+
+    /* 4. Catálogo Maestro: Evitamos que las cartas se vuelvan miniaturas */
+    .grid-9 {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .epic-card {
+        width: 100% !important;
+        max-width: 350px !important; /* Mantiene un tamaño fijo y legible */
+    }
+}
