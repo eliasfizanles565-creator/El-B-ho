@@ -52,6 +52,7 @@ body { background: var(--dark); color: white; font-family: 'Poppins', sans-serif
 .epic-card { 
     background: var(--card-bg); border-radius: 25px; padding: 30px; 
     border: 1px solid #333; transition: 0.5s; cursor: pointer; display: block; position: relative;
+    
 }
 .epic-card:hover { border-color: var(--gold); box-shadow: 0 0 30px var(--gold-glow); transform: translateY(-15px); }
 
@@ -511,4 +512,20 @@ body { background: var(--dark); color: white; font-family: 'Poppins', sans-serif
         font-size: 1.8rem !important;
         line-height: 1.2 !important;
     }
+}
+
+
+/* --- 🖼️ AJUSTE PARA QUE LA IMAGEN NO ROMPA LA TARJETA --- */
+.epic-card img {
+    width: 100% !important;     /* Obliga a la imagen a no salirse de los lados */
+    height: 350px !important;    /* Altura fija para que todas las cartas midan lo mismo */
+    object-fit: cover !important; /* El truco mágico: recorta la imagen para que encaje sin deformarse */
+    display: block;
+}
+
+/* Por si la imagen es muy grande y empuja el contenido hacia abajo */
+.epic-card {
+    overflow: hidden !important; /* Corta cualquier cosa que intente salirse de la tarjeta */
+    display: flex;
+    flex-direction: column;
 }
