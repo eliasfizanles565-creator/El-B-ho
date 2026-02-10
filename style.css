@@ -451,122 +451,76 @@ body { background: var(--dark); color: white; font-family: 'Poppins', sans-serif
 }
 
 
-/* --- 📱 AJUSTES PARA CELULAR (Añadir al final) --- */
-@media (max-width: 768px) {
-    
-    /* 1. Evita que la línea dorada rompa el ancho del celular */
-    .line-divider {
-        width: 90% !important; 
-        max-width: 770px;
-    }
 
-    /* 2. Catálogo: Pasa de 3 columnas a 1 sola para que no se achiquen */
-    .grid-9 {
-        grid-template-columns: 1fr !important;
-        gap: 20px;
-    }
-
-    /* 3. Oráculo: Cambia de fila horizontal a columna vertical */
-    .contenedor-horizontal-grande {
-        flex-direction: column !important; /* Uno debajo de otro */
-        align-items: center !important;
-        gap: 40px;
-    }
-
-    /* 4. Tarjetas del Oráculo: Tamaño fijo que no se achica */
-    .card-oraculo-pro {
-        width: 100% !important; /* Ocupa el ancho del móvil */
-        max-width: 420px;       /* Pero no crece más de tu tamaño original */
-        min-width: 300px;       /* Nunca se achica menos de esto */
-        height: auto !important;
-    }
-
-    /* 5. Ajuste de textos para que no se vean gigantes en el cel */
-    .titulo-seccion {
-        font-size: 2rem !important;
-    }
-    
-    .main-title {
-        font-size: 1.8rem !important;
-    }
-}
-
-
-
-/* --- 🛠️ REPARACIÓN DEFINITIVA PARA MÓVIL --- */
-@media screen and (max-width: 768px) {
-    
-    /* 1. Forzamos que la línea dorada se encoja para que no estire la pantalla */
-    .line-divider {
-        width: 90% !important;
-        max-width: 90vw !important;
-        margin: 20px auto !important;
-    }
-
-    /* 2. El Oráculo: Forzamos que ignoren el ancho horizontal y se pongan en columna */
-    .contenedor-horizontal-grande {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        padding: 10px !important;
-    }
-
-    /* 3. TAMAÑO FIJO: Aquí obligamos a las tarjetas a medir lo mismo que en tu PC pero adaptado */
-    .card-oraculo-pro {
-        width: 90vw !important;      /* Usa casi todo el ancho de la pantalla del cel */
-        min-width: 320px !important;  /* NUNCA se achicará menos de esto */
-        max-width: 420px !important;  /* NUNCA será más grande que tu original */
-        height: auto !important;      /* Deja que crezca hacia abajo si hay mucho texto */
-        margin-bottom: 30px !important;
-        border: none !important;      /* Quitamos bordes */
-    }
-
-    /* 4. Catálogo Maestro: Evitamos que las cartas se vuelvan miniaturas */
-    .grid-9 {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-    }
-
-    .epic-card {
-        width: 100% !important;
-        max-width: 350px !important; /* Mantiene un tamaño fijo y legible */
-    }
-}
 
 
 /* --- ⛔ PROHIBIDO ACHICAR (BLOQUEO TOTAL) --- */
 @media screen and (max-width: 768px) {
 
-    /* 1. Forzamos que el contenedor no comprima a sus hijos */
+    /* 1. Contenedores en columna para que nada se aplaste */
     .grid-9, 
     .contenedor-horizontal-grande {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        flex-wrap: nowrap !important; /* Evita que intenten reacomodarse raro */
+        flex-wrap: nowrap !important;
     }
 
-    /* 2. Bloqueo de las tarjetas del Catálogo */
+    /* 2. Bloqueo de tamaño de tarjetas */
     .epic-card {
-        width: 350px !important;    /* TAMAÑO FIJO */
-        min-width: 350px !important; /* PROHIBIDO ACHICAR */
-        flex-shrink: 0 !important;   /* ORDEN DIRECTA AL NAVEGADOR DE NO COMPRIMIR */
+        width: 350px !important;
+        min-width: 350px !important;
+        flex-shrink: 0 !important;
         margin-bottom: 30px !important;
     }
 
-    /* 3. Bloqueo de las tarjetas del Oráculo */
-    .card-oraculo-pro, .card-oraculo-xl {
-        width: 400px !important;    /* TU TAMAÑO ORIGINAL FIJO */
-        min-width: 400px !important; /* PROHIBIDO ACHICAR */
-        flex-shrink: 0 !important;   /* NO SE ENCOGE */
+    .card-oraculo-pro {
+        width: 400px !important;
+        min-width: 400px !important;
+        flex-shrink: 0 !important;
         height: auto !important;
-        border: none !important;     /* SIN BORDES */
+        border: none !important;
         margin-bottom: 40px !important;
     }
 
-    /* 4. Evita que el fondo o el cuerpo obliguen a achicar */
-    body, html {
-        overflow-x: auto !important; /* Si la tarjeta es más grande que el cel, que salga barra de scroll lateral en vez de achicarse */
+    /* 3. Header: Logo arriba, Menú y Carrito abajo */
+    .torre-control {
+        height: auto !important; 
+        padding: 10px 0 !important;
+        position: fixed !important;
     }
-}
+
+    .header-container {
+        flex-direction: column !important; 
+        gap: 8px !important;
+    }
+
+    /* 4. Menú: Ajuste para que entre el 04. Oráculo */
+    .mapa-academia ul {
+        display: flex !important;
+        flex-wrap: wrap !important; 
+        justify-content: center !important;
+        gap: 12px !important; 
+        padding: 0 5px !important;
+    }
+
+    .mapa-academia a {
+        font-size: 0.7rem !important; 
+        white-space: nowrap !important;
+    }
+
+    /* 5. Carrito: Visible y centrado */
+    .interfaz-lortel {
+        margin: 5px auto !important;
+        padding: 6px 15px !important;
+        font-size: 0.8rem !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    /* 6. Habilitar scroll lateral si la tarjeta es más ancha que el cel */
+    body, html {
+        overflow-x: auto !important;
+    }
+
+} /* <--- ESTA llave cierra el @media y Visual Studio estará feliz */
