@@ -323,9 +323,9 @@
                     <div class="cart-item" style="display:flex; justify-content:space-between; padding:15px; border-bottom:1px solid #222;">
                         <div>
                             <h4 style="margin:0; font-size:0.9rem;">${nombre}</h4>
-                            <small style="color:#f1c40f;">${item.cant} unidad(es) x $${item.precio}</small>
+                            <small style="color:#f1c40f;">${item.cant} unidad(es) x S/${item.precio}</small>
                         </div>
-                        <span style="font-weight:bold;">$${subItem.toFixed(2)}</span>
+                        <span style="font-weight:bold;">S/${subItem.toFixed(2)}</span>
                     </div>
                 `;
             }
@@ -335,8 +335,8 @@
             }
 
             contador.innerText = itemsTotales;
-            document.getElementById('subtotal').innerText = `$${subtotal.toFixed(2)}`;
-            document.getElementById('total-final').innerText = `$${(subtotal + 10).toFixed(2)}`;
+            document.getElementById('subtotal').innerText = `S/${subtotal.toFixed(2)}`;
+            document.getElementById('total-final').innerText = `S/${(subtotal + 5).toFixed(2)}`;
         }
 
         // 5. ENVIAR A WHATSAPP DESDE EL RESUMEN
@@ -349,7 +349,7 @@
             let mensaje = "🏰 *NUEVO PEDIDO - EL BÚHO* 🦉%0A";
             mensaje += "--------------------------%0A";
             for (let nombre in carrito) {
-                mensaje += `• ${carrito[nombre].cant}x ${nombre} ($${(carrito[nombre].precio * carrito[nombre].cant).toFixed(2)})%0A`;
+                mensaje += `• ${carrito[nombre].cant}x ${nombre} (S/${(carrito[nombre].precio * carrito[nombre].cant).toFixed(2)})%0A`;
             }
             mensaje += "--------------------------%0A";
             mensaje += `💰 *TOTAL:* ${document.getElementById('total-final').innerText}%0A%0A`;
