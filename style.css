@@ -454,73 +454,61 @@ body { background: var(--dark); color: white; font-family: 'Poppins', sans-serif
 
 
 
-/* --- ⛔ PROHIBIDO ACHICAR (BLOQUEO TOTAL) --- */
+/* --- 📱 AJUSTE DE HEADER COMPACTO Y SIN TAPAR TÍTULOS --- */
 @media screen and (max-width: 768px) {
 
-    /* 1. Contenedores en columna para que nada se aplaste */
-    .grid-9, 
-    .contenedor-horizontal-grande {
+    /* 1. Ponemos el Búho al costado del texto y reducimos altura */
+    .logo {
         display: flex !important;
-        flex-direction: column !important;
         align-items: center !important;
-        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
     }
 
-    /* 2. Bloqueo de tamaño de tarjetas */
-    .epic-card {
-        width: 350px !important;
-        min-width: 350px !important;
-        flex-shrink: 0 !important;
-        margin-bottom: 30px !important;
+    .owl-icon {
+        font-size: 1.2rem !important; /* Búho más pequeño al lado del texto */
     }
 
-    .card-oraculo-pro {
-        width: 400px !important;
-        min-width: 400px !important;
-        flex-shrink: 0 !important;
-        height: auto !important;
-        border: none !important;
-        margin-bottom: 40px !important;
-    }
-
-    /* 3. Header: Logo arriba, Menú y Carrito abajo */
     .torre-control {
-        height: auto !important; 
-        padding: 10px 0 !important;
-        position: fixed !important;
+        height: auto !important;
+        padding: 5px 0 !important;
+        background: rgba(11, 13, 23, 0.95) !important;
     }
 
+    /* 2. COMPENSACIÓN: Empujamos el contenido hacia abajo para que NO lo tape el header */
+    body {
+        padding-top: 120px !important; 
+    }
+
+    /* 3. Header Container: Mantiene el orden pero más apretado */
     .header-container {
-        flex-direction: column !important; 
+        flex-direction: column !important;
+        gap: 5px !important;
+    }
+
+    /* 4. Menú: Aseguramos que el 04 y Carrito respiren */
+    .mapa-academia ul {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
         gap: 8px !important;
     }
 
-    /* 4. Menú: Ajuste para que entre el 04. Oráculo */
-    .mapa-academia ul {
-        display: flex !important;
-        flex-wrap: wrap !important; 
-        justify-content: center !important;
-        gap: 12px !important; 
-        padding: 0 5px !important;
-    }
-
     .mapa-academia a {
-        font-size: 0.7rem !important; 
+        font-size: 0.65rem !important;
         white-space: nowrap !important;
     }
 
-    /* 5. Carrito: Visible y centrado */
+    /* 5. Carrito: Pequeño y centrado */
     .interfaz-lortel {
-        margin: 5px auto !important;
-        padding: 6px 15px !important;
+        margin: 2px auto !important;
+        padding: 4px 12px !important;
         font-size: 0.8rem !important;
-        display: flex !important;
-        align-items: center !important;
     }
 
-    /* 6. Habilitar scroll lateral si la tarjeta es más ancha que el cel */
-    body, html {
-        overflow-x: auto !important;
+    /* 6. Ajuste del título principal para que no se vea cortado */
+    .hero-text h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
     }
-
-} /* <--- ESTA llave cierra el @media y Visual Studio estará feliz */
+}
