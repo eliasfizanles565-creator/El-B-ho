@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licorería El Búho - Edición Legendaria</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="torre-control">
+        <div class="header-blur"></div>
+        <div class="header-container">
+            <div class="logo">
+                <span class="owl-icon">🦉</span>
+                <h1>EL BÚHO</h1>
+            </div>
+            <nav class="mapa-academia">
+                <ul>
+                    <li><a href="#inicio"><span>01.</span> Inicio</a></li>
+                    <li><a href="#promos"><span>02.</span> Packs</a></li>
+                    <li><a href="#catalogo"><span>03.</span> Catálogo</a></li>
+                    <li><a href="#oraculo"><span>04.</span> Oráculo</a></li>
+                </ul>
+            </nav>
+            <div class="interfaz-lortel" id="open-cart">
+                🛒 <small class="cart-count">0</small>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero-slider-section">
+            <div class="hero-text">
+                <span class="tag">✦ SELECCIÓN DE RANGO S</span>
+                <h2>Vinos de la Academia</h2>
+            </div>
+            <div class="slider-container">
+                <div class="slider-track">
+                    <div class="slide-card"><img src="vino1.jpg"><h3>Vino Yenika</h3></div>
+                    <div class="slide-card"><img src="vino2.jpg"><h3>Oro Kehlle</h3></div>
+                    <div class="slide-card"><img src="vino3.jpg"><h3>Esencia Lucy</h3></div>
+                    <div class="slide-card"><img src="vino4.jpg"><h3>Fuego Faelwood</h3></div>
+                    <div class="slide-card"><img src="vino5.jpg"><h3>Reserva Lortel</h3></div>
+                    <div class="slide-card"><img src="vino1.jpg"><h3>Vino Yenika</h3></div>
+                    <div class="slide-card"><img src="vino2.jpg"><h3>Oro Kehlle</h3></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="promos" class="seccion-maestra">
+    <h2 class="titulo-seccion">Packs & Promociones</h2>
+    
+    <div class="grid-9">
+        
+        <div class="card-box">
+            <input type="checkbox" id="p1" class="trigger-expand">
+            <label for="p1" class="epic-card">
+                <div class="badge-promo">-20%</div>
+                <img src="pack1.jpg" alt="Pack Supervivencia">
+                <div class="card-body">
+                    <h3>Pack Supervivencia</h3>
+                    <span class="price" data-value="49.99">$49.99</span>
+                    
+                    <div class="selector-cantidad" onclick="event.stopPropagation();">
+                        <button class="btn-qty minus">-</button>
+                        <span class="qty-value">1</span>
+                        <button class="btn-qty plus">+</button>
+                    </div>
+
+                    <div class="desc-expandida">
+                        <p>Whisky + 2 Vasos + Hielo. Ideal para sobrevivir a las noches largas de estudio en la academia.</p>
+                    </div>
+                    <button class="add-cart-epic">Cerrar Trato</button>
+                </div>
+            </label>
+        </div>
+
+        <div class="card-box">
+            <input type="checkbox" id="p2" class="trigger-expand">
+            <label for="p2" class="epic-card">
+                <div class="badge-promo">-15%</div>
+                <img src="pack2.jpg" alt="Dúo Espiritual">
+                <div class="card-body">
+                    <h3>Dúo Espiritual</h3>
+                    <span class="price" data-value="35.00">$35.00</span>
+                    
+                    <div class="selector-cantidad" onclick="event.stopPropagation();">
+                        <button class="btn-qty minus">-</button>
+                        <span class="qty-value">1</span>
+                        <button class="btn-qty plus">+</button>
+                    </div>
+
+                    <div class="desc-expandida">
+                        <p>Vino Yenika + Selección de Quesos. Perfecto para compartir con alguien especial bajo la luz de la luna.</p>
+                    </div>
+                    <button class="add-cart-epic">Cerrar Trato</button>
+                </div>
+            </label>
+        </div>
+
+        <div class="card-box">
+            <input type="checkbox" id="p3" class="trigger-expand">
+            <label for="p3" class="epic-card">
+                <div class="badge-promo">HOT</div>
+                <img src="pack3.jpg" alt="Banquete Lortel">
+                <div class="card-body">
+                    <h3>Banquete de Lortel</h3>
+                    <span class="price" data-value="89.90">$89.90</span>
+                    
+                    <div class="selector-cantidad" onclick="event.stopPropagation();">
+                        <button class="btn-qty minus">-</button>
+                        <span class="qty-value">1</span>
+                        <button class="btn-qty plus">+</button>
+                    </div>
+
+                    <div class="desc-expandida">
+                        <p>Reserva Especial + Copa de Cristal + Destilador Arcano. El trato definitivo para los grandes comerciantes.</p>
+                    </div>
+                    <button class="add-cart-epic">Cerrar Trato</button>
+                </div>
+            </label>
+        </div>
+
+    </div>
+</section>
+
+
+        <section id="catalogo" class="seccion-maestra bg-dark-alt">
+            <h2 class="titulo-seccion">Catálogo Maestro</h2>
+            <div class="grid-9">
+                <div class="card-box">
+                    <input type="checkbox" id="c1" class="trigger-expand">
+                    <label for="c1" class="epic-card">
+                        <img src="vino-tinto.jpg" alt="Vino Spirits">
+                        <div class="card-body">
+                            <h3>Vino de los Espíritus</h3>
+                            <span class="price" data-value="35.00">$35.00</span>
+                            <div class="selector-cantidad" onclick="event.stopPropagation();">
+                                <button class="btn-qty minus">-</button>
+                                <span class="qty-value">1</span>
+                                <button class="btn-qty plus">+</button>
+                            </div>
+                            <div class="desc-expandida"><p>Cálido y reconfortante. Una bendición directa de los espíritus de fuego.</p></div>
+                            <button class="add-cart-epic">Cerrar Trato</button>
+                        </div>
+                    </label>
+                </div>
+                <div class="card-box">
+                    <input type="checkbox" id="c2" class="trigger-expand">
+                    <label for="c2" class="epic-card">
+                        <img src="vino2.jpg" alt="Oro Kehlle">
+                        <div class="card-body">
+                            <h3>Oro Líquido Kehlle</h3>
+                            <span class="price" data-value="55.00">$55.00</span>
+                            <div class="selector-cantidad" onclick="event.stopPropagation();">
+                                <button class="btn-qty minus">-</button>
+                                <span class="qty-value">1</span>
+                                <button class="btn-qty plus">+</button>
+                            </div>
+                            <div class="desc-expandida"><p>Exclusividad absoluta. Un sabor brillante que solo los nobles pueden costear.</p></div>
+                            <button class="add-cart-epic">Cerrar Trato</button>
+                        </div>
+                    </label>
+                </div>
+                <div class="card-box">
+                    <input type="checkbox" id="c3" class="trigger-expand">
+                    <label for="c3" class="epic-card">
+                        <img src="vino3.jpg" alt="Esencia Lucy">
+                        <div class="card-body">
+                            <h3>Esencia de Lucy</h3>
+                            <span class="price" data-value="42.00">$42.00</span>
+                            <div class="selector-cantidad" onclick="event.stopPropagation();">
+                                <button class="btn-qty minus">-</button>
+                                <span class="qty-value">1</span>
+                                <button class="btn-qty plus">+</button>
+                            </div>
+                            <div class="desc-expandida"><p>Potencia arcana pura. Un trago corto que te dejará flotando en sueños.</p></div>
+                            <button class="add-cart-epic">Cerrar Trato</button>
+                        </div>
+                    </label>
+                </div>
+            </div> </section> 
+            
+            <section id="oraculo" class="seccion-oraculo-final">
+            <header class="editorial-header">
+                <span class="sub-title">The Sacred Chronicles</span>
+                <h2 class="main-title">Historias del Oráculo</h2>
+                <div class="line-divider"></div>
+            </header>
+
+            <div class="contenedor-horizontal-grande">
+                <article class="card-oraculo-pro reveal-scroll">
+                    <div class="capa-visual">
+                        <img src="historia1.jpg" alt="Sangre de Silvenia">
+                        <div class="marca-vol">VOL. I</div>
+                    </div>
+                    <div class="capa-texto">
+                        <h3>La Sangre de Silvenia</h3>
+                        <p>Recolectado de las lágrimas de la primera santa. Revela verdades bajo la luna.</p>
+                        <div class="oro-precio">$120.00</div>
+                        <button class="btn-oraculo-comprar" onclick="agregarAlCarrito('La Sangre de Silvenia', 120)">AÑADIR</button>
+                    </div>
+                </article>
+
+                <article class="card-oraculo-pro reveal-scroll">
+                    <div class="capa-visual">
+                        <img src="historia2.jpg" alt="Susurro de Yenika">
+                        <div class="marca-vol">VOL. II</div>
+                    </div>
+                    <div class="capa-texto">
+                        <h3>Susurro de Yenika</h3>
+                        <p>Esencia de espíritus elementales. Relaja el alma antes de la batalla definitiva.</p>
+                        <div class="oro-precio">$85.00</div>
+                        <button class="btn-oraculo-comprar" onclick="agregarAlCarrito('Susurro de Yenika', 85)">AÑADIR</button>
+                    </div>
+                </article>
+
+                <article class="card-oraculo-pro reveal-scroll">
+                    <div class="capa-visual">
+                        <img src="historia3.jpg" alt="Juicio de Lortel">
+                        <div class="marca-vol">VOL. III</div>
+                    </div>
+                    <div class="capa-texto">
+                        <h3>Juicio de Lortel</h3>
+                        <p>Oro líquido destilado bajo rigor comercial. Solo para voluntades de hierro.</p>
+                        <div class="oro-precio">$150.00</div>
+                        <button class="btn-oraculo-comprar" onclick="agregarAlCarrito('Juicio de Lortel', 150)">AÑADIR</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Tu Inventario 🦉</h2>
+            <button id="close-cart" class="close-cart">&times;</button>
+        </div>
+        <div id="cart-items-container">
+            <p style="text-align:center; padding:20px; color:#666;">Tu bolsa está vacía...</p>
+        </div>
+        <div class="cart-summary">
+            <div class="summary-line"><span>Subtotal:</span> <span id="subtotal">$0.00</span></div>
+            <div class="summary-line"><span>Envío:</span> <span>$10.00</span></div>
+            <div class="summary-total"><span>Total:</span> <span id="total-final">$10.00</span></div>
+            <button id="whatsapp-checkout" class="btn-checkout">Proceder al Trato (WhatsApp)</button>
+        </div>
+    </div>
+
+    <div class="chat-buho-container">
+        <div class="globo-texto">¡Hola! Soy el Guardián. ¿Buscas algún elixir?</div>
+        <a href="https://wa.me/51900556685" class="buho-avatar" target="_blank">🦉</a>
+    </div>
+
+    <script>
+        let carrito = {};
+
+        // 1. FUNCIONAMIENTO DE LOS BOTONES +/- EN LAS TARJETAS
+        document.querySelectorAll('.selector-cantidad').forEach(selector => {
+            const btnMinus = selector.querySelector('.minus');
+            const btnPlus = selector.querySelector('.plus');
+            const qtySpan = selector.querySelector('.qty-value');
+
+            btnMinus.onclick = (e) => {
+                e.preventDefault();
+                let current = parseInt(qtySpan.innerText);
+                if (current > 1) qtySpan.innerText = current - 1;
+            };
+
+            btnPlus.onclick = (e) => {
+                e.preventDefault();
+                let current = parseInt(qtySpan.innerText);
+                qtySpan.innerText = current + 1;
+            };
+        });
+
+        // 2. ABRIR Y CERRAR EL RESUMEN (SIDEBAR)
+        const sidebar = document.getElementById('cart-sidebar');
+        document.getElementById('open-cart').onclick = () => sidebar.classList.add('open');
+        document.getElementById('close-cart').onclick = () => sidebar.classList.remove('open');
+
+        // 3. AÑADIR PRODUCTOS AL CARRITO
+        document.querySelectorAll('.add-cart-epic').forEach(btn => {
+            btn.onclick = (e) => {
+                e.preventDefault();
+                const card = btn.closest('.card-body');
+                const nombre = card.querySelector('h3').innerText;
+                const precio = parseFloat(card.querySelector('.price').dataset.value);
+                const cantidad = parseInt(card.querySelector('.qty-value').innerText);
+
+                if (carrito[nombre]) {
+                    carrito[nombre].cant += cantidad;
+                } else {
+                    carrito[nombre] = { precio: precio, cant: cantidad };
+                }
+
+                btn.innerText = "✅ ¡En Inventario!";
+                setTimeout(() => btn.innerText = "Cerrar Trato", 1000);
+                
+                actualizarResumen();
+                sidebar.classList.add('open'); // Abre el resumen automáticamente al añadir
+            };
+        });
+
+        // 4. ACTUALIZAR EL DISEÑO DEL RESUMEN
+        function actualizarResumen() {
+            const container = document.getElementById('cart-items-container');
+            const contador = document.querySelector('.cart-count');
+            container.innerHTML = '';
+            let subtotal = 0;
+            let itemsTotales = 0;
+
+            for (let nombre in carrito) {
+                const item = carrito[nombre];
+                const subItem = item.precio * item.cant;
+                subtotal += subItem;
+                itemsTotales += item.cant;
+
+                container.innerHTML += `
+                    <div class="cart-item" style="display:flex; justify-content:space-between; padding:15px; border-bottom:1px solid #222;">
+                        <div>
+                            <h4 style="margin:0; font-size:0.9rem;">${nombre}</h4>
+                            <small style="color:#f1c40f;">${item.cant} unidad(es) x $${item.precio}</small>
+                        </div>
+                        <span style="font-weight:bold;">$${subItem.toFixed(2)}</span>
+                    </div>
+                `;
+            }
+
+            if (itemsTotales === 0) {
+                container.innerHTML = '<p style="text-align:center; padding:20px; color:#666;">Tu bolsa está vacía...</p>';
+            }
+
+            contador.innerText = itemsTotales;
+            document.getElementById('subtotal').innerText = `$${subtotal.toFixed(2)}`;
+            document.getElementById('total-final').innerText = `$${(subtotal + 10).toFixed(2)}`;
+        }
+
+        // 5. ENVIAR A WHATSAPP DESDE EL RESUMEN
+        document.getElementById('whatsapp-checkout').onclick = () => {
+            if (Object.keys(carrito).length === 0) {
+                alert("El inventario está vacío.");
+                return;
+            }
+
+            let mensaje = "🏰 *NUEVO PEDIDO - EL BÚHO* 🦉%0A";
+            mensaje += "--------------------------%0A";
+            for (let nombre in carrito) {
+                mensaje += `• ${carrito[nombre].cant}x ${nombre} ($${(carrito[nombre].precio * carrito[nombre].cant).toFixed(2)})%0A`;
+            }
+            mensaje += "--------------------------%0A";
+            mensaje += `💰 *TOTAL:* ${document.getElementById('total-final').innerText}%0A%0A`;
+            mensaje += "¡Hola! Deseo concretar este pedido.";
+
+            const nroTelefono = "51900556685";
+            window.open(`https://wa.me/${nroTelefono}?text=${mensaje}`, '_blank');
+        };
+
+        // Función para que el contenido aparezca al hacer scroll
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.editorial-spread').forEach(spread => {
+    observer.observe(spread);
+});
+
+// Función de ayuda para añadir al carrito desde el Oráculo
+function agregarAlCarrito(nombre, precio) {
+    if (carrito[nombre]) {
+        carrito[nombre].cant += 1;
+    } else {
+        carrito[nombre] = { precio: precio, cant: 1 };
+    }
+    actualizarResumen();
+    document.getElementById('cart-sidebar').classList.add('open');
+}
+   
+   const observerOraculo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal-scroll').forEach(card => {
+    observerOraculo.observe(card);
+});
+   
+   
+
+
+   </script>
+
+</body>
+</html>

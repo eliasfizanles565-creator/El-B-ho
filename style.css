@@ -1,0 +1,343 @@
+:root {
+    --gold: #f1c40f;
+    --gold-glow: rgba(241, 196, 15, 0.4);
+    --dark: #0b0d17;
+    --card-bg: #1a1d29;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+body { background: var(--dark); color: white; font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+
+/* --- 🏰 HEADER ÉPICO --- */
+.torre-control {
+    position: fixed; top: 0; width: 100%; height: 90px;
+    z-index: 5000; display: flex; align-items: center; padding: 0 5%;
+}
+
+.header-blur {
+    position: absolute; inset: 0;
+    background: rgba(11, 13, 23, 0.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(241, 196, 15, 0.3);
+}
+
+.header-container { position: relative; width: 100%; display: flex; justify-content: space-between; align-items: center; }
+.logo h1 { font-size: 1.5rem; letter-spacing: 4px; color: var(--gold); }
+.mapa-academia ul { display: flex; gap: 40px; list-style: none; }
+.mapa-academia a { text-decoration: none; color: white; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
+.mapa-academia a span { color: var(--gold); font-weight: bold; margin-right: 5px; }
+
+/* --- 🛒 ICONO CARRITO EN HEADER --- */
+.interfaz-lortel {
+    cursor: pointer;
+    background: rgba(255,255,255,0.1);
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: 1px solid var(--gold-glow);
+    transition: 0.3s;
+}
+.interfaz-lortel:hover { background: var(--gold); color: black; }
+
+/* --- 🎠 SLIDER INICIO --- */
+.hero-slider-section { padding-top: 150px; height: 100vh; text-align: center; }
+.slider-track { display: flex; animation: scroll 15s linear infinite; width: fit-content; }
+.slider-track:hover { animation-play-state: paused; }
+@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.slide-card { width: 320px; margin: 0 20px; background: var(--card-bg); padding: 25px; border-radius: 20px; border: 1px solid #333; }
+.slide-card img { width: 100%; height: 280px; object-fit: cover; border-radius: 15px; }
+
+/* --- 🍷 GRIDS Y TARJETAS --- */
+.seccion-maestra { padding: 120px 8%; min-height: 100vh; }
+.grid-9 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.epic-card { 
+    background: var(--card-bg); border-radius: 25px; padding: 30px; 
+    border: 1px solid #333; transition: 0.5s; cursor: pointer; display: block; position: relative;
+}
+.epic-card:hover { border-color: var(--gold); box-shadow: 0 0 30px var(--gold-glow); transform: translateY(-15px); }
+
+/* --- 🔢 SELECTOR DE CANTIDAD (AJUSTADO) --- */
+.selector-cantidad {
+    display: flex;
+    align-items: center;
+    background: #0b0d17;
+    border-radius: 12px;
+    margin: 20px 0;
+    border: 1px solid var(--gold);
+    overflow: hidden;
+}
+.btn-qty {
+    background: var(--gold);
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-qty:hover { background: white; }
+.qty-value { flex-grow: 1; text-align: center; font-weight: bold; color: white; font-size: 1.1rem; }
+
+/* --- 🔘 BOTÓN AÑADIR --- */
+.add-cart-epic { 
+    background: var(--gold); color: black; border: none; padding: 15px; 
+    width: 100%; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s;
+    text-transform: uppercase; letter-spacing: 1px;
+}
+.add-cart-epic:hover { background: white; box-shadow: 0 0 20px var(--gold-glow); }
+
+/* --- 🛒 SIDEBAR DEL CARRITO --- */
+.cart-sidebar {
+    position: fixed; right: -450px; top: 0; width: 400px; height: 100vh;
+    background: #0b0d17; border-left: 2px solid var(--gold);
+    z-index: 10000; transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    display: flex; flex-direction: column; padding: 30px;
+    box-shadow: -20px 0 50px rgba(0,0,0,0.9);
+}
+.cart-sidebar.open { right: 0; }
+
+.cart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.cart-header h2 { color: var(--gold); letter-spacing: 2px; }
+.close-cart { background: none; border: none; color: white; font-size: 2.5rem; cursor: pointer; transition: 0.3s; }
+.close-cart:hover { color: var(--gold); transform: rotate(90deg); }
+
+#cart-items-container { flex-grow: 1; overflow-y: auto; margin-bottom: 20px; }
+.cart-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.cart-summary { border-top: 1px solid #333; padding-top: 25px; }
+.summary-line { display: flex; justify-content: space-between; margin-bottom: 12px; color: #aaa; }
+.summary-total { display: flex; justify-content: space-between; font-size: 1.8rem; font-weight: bold; margin: 20px 0; color: var(--gold); }
+
+.btn-checkout {
+    width: 100%; background: linear-gradient(45deg, #f39c12, #f1c40f);
+    border: none; padding: 18px; border-radius: 12px; font-weight: bold;
+    font-size: 1rem; cursor: pointer; box-shadow: 0 10px 20px var(--gold-glow);
+    transition: 0.3s; text-transform: uppercase;
+}
+.btn-checkout:hover { transform: translateY(-3px); filter: brightness(1.1); }
+
+/* --- 🦉 BÚHO CHAT --- */
+.chat-buho-container { position: fixed; bottom: 40px; right: 40px; display: flex; align-items: center; z-index: 9999; }
+.globo-texto {
+    background: white; color: black; padding: 12px 20px; border-radius: 15px 15px 0 15px;
+    margin-right: 15px; font-size: 0.85rem; font-weight: bold; width: 220px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    opacity: 0; visibility: hidden; transform: translateX(20px); transition: 0.4s;
+}
+.buho-avatar {
+    background: var(--gold); width: 70px; height: 70px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 35px;
+    text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: 0.3s;
+}
+.chat-buho-container:hover .globo-texto { opacity: 1; visibility: visible; transform: translateX(0); }
+.buho-avatar:hover { transform: scale(1.1) rotate(5deg); }
+
+/* --- 🔮 ORÁCULO REVEAL --- */
+.img-reveal { position: relative; border-radius: 20px; border: 1px solid var(--gold); height: 400px; overflow: hidden; }
+.reveal-overlay { 
+    position: absolute; inset: 0; background: rgba(11, 13, 23, 0.9); 
+    opacity: 0; transition: 0.6s; display: flex; flex-direction: column; justify-content: center; padding: 40px; 
+}
+.img-reveal:hover .reveal-overlay { opacity: 1; }
+
+
+/* --- 🔮 ESTILOS EXCLUSIVOS DEL ORÁCULO (HORIZONTAL) --- */
+.contenedor-oraculo-unico {
+    display: flex !important;
+    flex-direction: row !important; /* Fuerza horizontal */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: nowrap; /* Evita que se bajen */
+}
+
+
+.tarjeta-oraculo-horizontal {
+    display: flex !important; /* Imagen izquierda, texto derecha */
+    background: #0d111d;
+    border: 1px solid rgba(241, 196, 15, 0.2);
+    border-radius: 12px;
+    width: 420px;
+    height: 190px;
+    overflow: hidden;
+    transition: 0.6s all ease;
+    opacity: 0; /* Para el efecto fade-in */
+    transform: translateY(30px);
+}
+
+.tarjeta-oraculo-horizontal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.oraculo-img-lado {
+    position: relative;
+    flex: 0 0 140px;
+}
+
+.oraculo-img-lado img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge-vol {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid var(--gold);
+    background: rgba(0,0,0,0.8);
+    color: var(--gold);
+    padding: 2px 6px;
+    font-size: 0.6rem;
+}
+
+.oraculo-txt-lado {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.oraculo-txt-lado h3 { font-size: 1rem; margin-bottom: 5px; color: white; }
+.oraculo-txt-lado p { font-size: 0.75rem; color: #aaa; font-style: italic; margin-bottom: 10px; }
+.precio-oro { color: var(--gold); font-weight: bold; margin-bottom: 10px; }
+
+.btn-oro-inv {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: white;
+    padding: 5px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-oro-inv:hover { background: var(--gold); color: black; }
+
+/* Ajuste para que no se rompa en pantallas pequeñas */
+@media (max-width: 1300px) {
+    .contenedor-oraculo-unico { flex-wrap: wrap; }
+    .tarjeta-oraculo-horizontal { width: 90%; }
+}
+
+
+/* --- FIX PARA EL CATÁLOGO --- */
+#catalogo {
+    display: block !important;
+    clear: both;
+}
+
+/* --- 🔮 ORÁCULO PRO (GRANDE Y SIN BORDES) --- */
+.seccion-oraculo-final {
+    padding: 100px 5%;
+    background: #0b0d17;
+}
+
+.contenedor-horizontal-grande {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.card-oraculo-pro {
+    display: flex;
+    flex-direction: column; /* Texto abajo para que sea más grande */
+    background: #111420;
+    width: 450px; /* Más ancho */
+    min-height: 500px; /* Más alto */
+    border-radius: 20px;
+    overflow: hidden;
+    border: none !important; /* QUITAMOS BORDES */
+    transition: 0.8s all ease;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.card-oraculo-pro.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.capa-visual {
+    position: relative;
+    height: 300px; /* Imagen grande */
+}
+
+.capa-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.marca-vol {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: var(--gold);
+    color: black;
+    padding: 5px 12px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    border-radius: 5px;
+}
+
+.capa-texto {
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.capa-texto h3 { font-size: 1.8rem; color: white; margin-bottom: 10px; }
+.capa-texto p { color: #bbb; font-style: italic; line-height: 1.6; }
+.oro-precio { color: var(--gold); font-size: 1.5rem; font-weight: bold; margin: 15px 0; }
+
+.btn-oraculo-comprar {
+    background: var(--gold);
+    border: none;
+    color: black;
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.btn-oraculo-comprar:hover { transform: scale(1.05); background: white; }
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .contenedor-horizontal-grande { flex-wrap: wrap; }
+    .card-oraculo-pro { width: 90%; }
+}
+
+
+/* Centrar el contenedor del encabezado del Oráculo */
+.editorial-header {
+    text-align: center; /* Centra el texto y elementos inline */
+    margin-bottom: 50px; /* Espacio antes de las tarjetas */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra la línea divisoria si es un flex-item */
+    font-size: 25px;
+}
+
+/* Asegurar que la línea dorada también esté centrada */
+.line-divider {
+    width: 770px;
+    height: 2px;
+    background: var(--gold);
+    margin: 20px auto; /* El 'auto' en los lados la centra horizontalmente */
+}
