@@ -449,3 +449,44 @@ body { background: var(--dark); color: white; font-family: 'Poppins', sans-serif
         font-size: 2rem !important;
     }
 }
+
+
+/* --- 📱 AJUSTES PARA CELULAR (Añadir al final) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Evita que la línea dorada rompa el ancho del celular */
+    .line-divider {
+        width: 90% !important; 
+        max-width: 770px;
+    }
+
+    /* 2. Catálogo: Pasa de 3 columnas a 1 sola para que no se achiquen */
+    .grid-9 {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    /* 3. Oráculo: Cambia de fila horizontal a columna vertical */
+    .contenedor-horizontal-grande {
+        flex-direction: column !important; /* Uno debajo de otro */
+        align-items: center !important;
+        gap: 40px;
+    }
+
+    /* 4. Tarjetas del Oráculo: Tamaño fijo que no se achica */
+    .card-oraculo-pro {
+        width: 100% !important; /* Ocupa el ancho del móvil */
+        max-width: 420px;       /* Pero no crece más de tu tamaño original */
+        min-width: 300px;       /* Nunca se achica menos de esto */
+        height: auto !important;
+    }
+
+    /* 5. Ajuste de textos para que no se vean gigantes en el cel */
+    .titulo-seccion {
+        font-size: 2rem !important;
+    }
+    
+    .main-title {
+        font-size: 1.8rem !important;
+    }
+}
